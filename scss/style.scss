@@ -16,7 +16,7 @@
 // @import 'partials/_contactform.scss';
 // @import 'partials/_footer.scss';
 
-@import url('https://fonts.googleapis.com/css?family=Merriweather:700,900|Montserrat:800|Open+Sans:300,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:700,900|Montserrat:800|Open+Sans:300,300i,600,700,800');
 
 * {
 	box-sizing: border-box;
@@ -30,6 +30,7 @@
 body {
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
 
 // Navigation
@@ -82,9 +83,9 @@ body {
 
 .site-grid {
 	display: grid;
-	grid-template-rows: 
+	grid-template-rows:
 	calc((100vh - 47px) / 5)
-	calc((100vh - 47px) / 5)
+	100%
 	calc((100vh - 47px) / 5)
 	calc((100vh - 47px) / 5)
 	calc((100vh - 47px) / 5);
@@ -221,38 +222,13 @@ body {
 			object-fit: cover;
 		}
 	}
+
+	&__label {
+		font: normal 600 16px Open Sans, sans-serif;
+		text-transform: uppercase;
+	}
+
+	&__value {
+		font: italic 300 16px Open Sans, sans-serif;
+	}
 }
-
-// .portfolio-item {
-// 	display: flex;
-// 	justify-content: flex-end;
-// 	align-items: center;
-// 	padding: 22px 16px;
-
-// 	&__counter {
-// 		font: normal 800 69px Montserrat, sans-serif;
-// 		color: #ffdd55;
-// 		text-decoration: underline;
-// 		margin: 0 35px 0 10px;
-// 	}
-
-// 	&__title {
-// 		font: normal 900 16px Merriweather, serif;
-// 		text-transform: capitalize;
-// 		margin-left: auto;
-// 	}
-// }
-
-// .portfolio__content {
-// 	width: 100%;
-// }
-
-// .portfolio__slider {
-// 	width: 100%;
-// 	height: 100%;
-	
-// 	&-image {
-// 		width: 100%;
-// 		object-fit: cover;
-// 	}
-// }
