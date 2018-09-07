@@ -30,7 +30,6 @@
 body {
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
 }
 
 // Navigation
@@ -82,14 +81,6 @@ body {
 // Site grid
 
 .site-grid {
-	display: grid;
-	grid-template-rows:
-	calc((100vh - 47px) / 5)
-	100%
-	calc((100vh - 47px) / 5)
-	calc((100vh - 47px) / 5)
-	calc((100vh - 47px) / 5);
-	grid-gap: 3px;
 	background-color: #fff;
 
 	&__item {
@@ -97,7 +88,9 @@ body {
 		justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
+		height: calc((100vh - 47px) / 5);
 		background-color: #ffdd55;
+		margin-bottom: 3px;
 
 		&--white {
 			justify-content: flex-start;
@@ -209,18 +202,27 @@ body {
 		margin-left: auto;
 	}
 
-	&_content {
-		width: 100%;
-	}
+	// &__content {
+	// 	justify-content: flex-start;
+	// 	height: 100%;
+	// 	margin-top: -3px;
+	// }
 	
-	&__slider {
+	&__slider, &__details {
+		justify-content: flex-start;
 		width: 100%;
 		height: 100%;
+		margin-top: -3px;
 		
 		&-image {
 			width: 100%;
 			object-fit: cover;
 		}
+	}
+
+	&__details {
+		position: relative;
+		padding: 2em 1.5em;
 	}
 
 	&__label {
@@ -230,5 +232,67 @@ body {
 
 	&__value {
 		font: italic 300 16px Open Sans, sans-serif;
+		line-height: 20px;
+	}
+
+	&__detail-item {
+		width: 100%;
+		letter-spacing: 2.2px;
+		margin-bottom: 12px;
+	}
+
+	&__readmore-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 55px 0;
+		margin: 0;
+	}
+
+	&__readmore-button {
+		width: 50px;
+		height: 50px;
+		background-color: #222222;
+		border: none;
+		border-radius: 25px;
+		margin: 0 15px 0 -65px;
+	}
+
+	&__readmore-text {
+		font: normal 300 16px Open Sans, sans-serif;
+		letter-spacing: .4px;
+		color: #222222;
+	}
+
+	&__buttons {
+		display: flex;
+		position: absolute;
+		top: 2em;
+		right: 1.5em;
+		width: 100px;
+	}
+
+	&__button--link, &__button--github {
+		width: 44px;
+		height: 44px;
+		background-color: #222222;
+		border: none;
+		border-radius: 25px;
+		margin: 0;
+	}
+
+	&__button--link {
+		margin-right: 12px;
+	}
+
+	&__collapse-button {
+		position: absolute;
+		bottom: -25px;
+		left: calc(50% - 25px);
+		width: 50px;
+		height: 50px;
+		background-color: #222222;
+		border: none;
+		border-radius: 25px;
 	}
 }

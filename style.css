@@ -367,8 +367,7 @@ th {
 
 body {
   width: 100%;
-  height: 100%;
-  overflow: hidden; }
+  height: 100%; }
 
 .navbar {
   display: flex;
@@ -405,16 +404,15 @@ body {
     bottom: 108px; }
 
 .site-grid {
-  display: grid;
-  grid-template-rows: calc((100vh - 47px) / 5) 100% calc((100vh - 47px) / 5) calc((100vh - 47px) / 5) calc((100vh - 47px) / 5);
-  grid-gap: 3px;
   background-color: #fff; }
   .site-grid__item {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #ffdd55; }
+    height: calc((100vh - 47px) / 5);
+    background-color: #ffdd55;
+    margin-bottom: 3px; }
     .site-grid__item--white {
       justify-content: flex-start;
       background-color: #fff; }
@@ -487,19 +485,76 @@ body {
   text-transform: capitalize;
   margin-left: auto; }
 
-.portfolio_content {
-  width: 100%; }
-
-.portfolio__slider {
+.portfolio__slider, .portfolio__details {
+  justify-content: flex-start;
   width: 100%;
-  height: 100%; }
-  .portfolio__slider-image {
+  height: 100%;
+  margin-top: -3px; }
+  .portfolio__slider-image, .portfolio__details-image {
     width: 100%;
     object-fit: cover; }
+
+.portfolio__details {
+  position: relative;
+  padding: 2em 1.5em; }
 
 .portfolio__label {
   font: normal 600 16px Open Sans, sans-serif;
   text-transform: uppercase; }
 
 .portfolio__value {
-  font: italic 300 16px Open Sans, sans-serif; }
+  font: italic 300 16px Open Sans, sans-serif;
+  line-height: 20px; }
+
+.portfolio__detail-item {
+  width: 100%;
+  letter-spacing: 2.2px;
+  margin-bottom: 12px; }
+
+.portfolio__readmore-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 55px 0;
+  margin: 0; }
+
+.portfolio__readmore-button {
+  width: 50px;
+  height: 50px;
+  background-color: #222222;
+  border: none;
+  border-radius: 25px;
+  margin: 0 15px 0 -65px; }
+
+.portfolio__readmore-text {
+  font: normal 300 16px Open Sans, sans-serif;
+  letter-spacing: .4px;
+  color: #222222; }
+
+.portfolio__buttons {
+  display: flex;
+  position: absolute;
+  top: 2em;
+  right: 1.5em;
+  width: 100px; }
+
+.portfolio__button--link, .portfolio__button--github {
+  width: 44px;
+  height: 44px;
+  background-color: #222222;
+  border: none;
+  border-radius: 25px;
+  margin: 0; }
+
+.portfolio__button--link {
+  margin-right: 12px; }
+
+.portfolio__collapse-button {
+  position: absolute;
+  bottom: -25px;
+  left: calc(50% - 25px);
+  width: 50px;
+  height: 50px;
+  background-color: #222222;
+  border: none;
+  border-radius: 25px; }
