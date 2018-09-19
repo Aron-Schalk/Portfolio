@@ -1,0 +1,51 @@
+.navbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	padding: 11px 0;
+
+	&--yellow {
+		background-color: #ffdd55;
+	}
+
+	@media screen and (min-width: 740px) {
+		height: 60px;
+	}
+}
+
+.titlebar {
+	font: normal 700 16px Open Sans, sans-serif;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+
+	&__link {
+		color: #222222;
+		&:hover {
+			font-weight: 800;
+		}
+	}
+
+	@media screen and (min-width: 740px) {
+		font: normal 700 20px Open Sans, sans-serif;
+	}
+}
+
+.social-buttons {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	background-color: #222222;
+	right: 0;
+	bottom: 65px;
+	z-index: 1000;
+	&--linkedin, &--github {
+		width: 27px;
+		height: 27px;
+		background-color: #fff;
+		border-radius: 27px;
+	}
+	&:nth-of-type(2) {
+		bottom: 108px;
+	}
+}

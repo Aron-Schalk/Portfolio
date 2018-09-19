@@ -3,109 +3,17 @@
 
 // Modules
 @import 'modules/_defaults.scss';
-// @import 'modules/_vars.scss';
-// @import 'modules/_typo.scss';
-
+@import 'modules/_vars.scss';
+@import 'modules/_typo.scss';
 
 // Partials
-// @import 'partials/_nav.scss';
+@import 'partials/_nav.scss';
+@import 'partials/_site-grid.scss';
+@import 'partials/_about-popup.scss';
 // @import 'partials/_button.scss';
-// @import 'partials/_container.scss';
-// @import 'partials/_content-text.scss';
 // @import 'partials/_gallery.scss';
 // @import 'partials/_contactform.scss';
 // @import 'partials/_footer.scss';
-
-@import url('https://fonts.googleapis.com/css?family=Merriweather:700,900|Montserrat:800|Open+Sans:300,300i,600,700,800');
-
-* {
-	box-sizing: border-box;
-	list-style-type: none;
-	text-decoration: none;
-	margin: 0;
-	padding: 0;
-	-webkit-font-smoothing: antialiased;
-}
-
-body {
-	width: 100%;
-	height: 100%;
-}
-
-// Navigation
-
-.navbar {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #fff;
-	padding: 11px 0;
-
-	&--yellow {
-		background-color: #ffdd55;
-	}
-}
-
-.titlebar {
-	font: normal 700 16px Open Sans, sans-serif;
-	letter-spacing: 1.5px;
-	text-transform: uppercase;
-
-	&__link {
-		color: #222222;
-		&:hover {
-			font-weight: 800;
-		}
-	}
-}
-
-.social-buttons {
-	position: fixed;
-	width: 40px;
-	height: 40px;
-	background-color: #222222;
-	right: 0;
-	bottom: 65px;
-	z-index: 1000;
-	&--linkedin, &--github {
-		width: 27px;
-		height: 27px;
-		background-color: #fff;
-		border-radius: 27px;
-	}
-	&:nth-of-type(2) {
-		bottom: 108px;
-	}
-}
-
-// Site grid
-
-.site-grid {
-	background-color: #fff;
-
-	&__item {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
-		height: calc((100vh - 47px) / 5);
-		background-color: #ffdd55;
-		margin-bottom: 3px;
-
-		&--white {
-			justify-content: flex-start;
-			background-color: #fff;
-		}
-
-		&--active {
-			grid-row: 100fr;
-		}
-	}
-
-	&--white {
-		background-color: #ffdd55;
-	}
-}
 
 .header {
 	display: flex;
@@ -141,40 +49,41 @@ body {
 			display: flex;
 			align-items: center;
 		}
+		
 	}
 
-}
+	@media screen and (min-width: 740px) {
 
-// About pop-up
+		position: absolute;
+		top: 30vh;
+		left: calc(50vw - 178.78px);
+		align-items: baseline;
 
-.about__popup {
-	background-color: #fff;
-	text-align: center;
-	z-index: 900;
-}
+		&__title {
+			font: normal 700 144px/144px Merriweather, serif;
 
-.popup {
-	color: #222222;
+			&-underscore {
+				width: 79px;
+				height: 11px;
+				margin-left: 6px;
+				transform: translateY(17px);
+			}
+		}
 
-	&__image {
-		width: 100vw;
-		height: calc((100vh - 47px) / 5);
-		object-fit: cover;
-	}
+		&__subtitle {
+			font: normal 300 22px Open Sans, sans-serif;
+			letter-spacing: 2.5px;
 
-	&__title {
-		font: normal 700 31px Merriweather, serif;
-	}
+			&-button {
+				margin: 0 15px 0 0;
+			}
 
-	&__subtitle {
-		font: normal 300 15px/30px Open Sans, sans-serif;
-		text-transform: uppercase;
-		margin-bottom: 40px;
-	}
-
-	&__text {
-		font: normal 300 16px/23px Open Sans, sans-serif;
-		margin-bottom: 1em;
+			&-container {
+				position: absolute;
+				top: 60vh;
+				left: calc(50vw - 25px);
+			}
+		}
 	}
 }
 
@@ -202,11 +111,6 @@ body {
 		margin-left: auto;
 	}
 
-	// &__content {
-	// 	justify-content: flex-start;
-	// 	height: 100%;
-	// 	margin-top: -3px;
-	// }
 	
 	&__slider, &__details {
 		justify-content: flex-start;
@@ -245,7 +149,7 @@ body {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 55px 0;
+		padding: 55px 0 30px 0;
 		margin: 0;
 	}
 

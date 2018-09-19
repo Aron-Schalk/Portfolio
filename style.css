@@ -377,6 +377,9 @@ body {
   padding: 11px 0; }
   .navbar--yellow {
     background-color: #ffdd55; }
+  @media screen and (min-width: 740px) {
+    .navbar {
+      height: 60px; } }
 
 .titlebar {
   font: normal 700 16px Open Sans, sans-serif;
@@ -386,6 +389,9 @@ body {
     color: #222222; }
     .titlebar__link:hover {
       font-weight: 800; }
+  @media screen and (min-width: 740px) {
+    .titlebar {
+      font: normal 700 20px Open Sans, sans-serif; } }
 
 .social-buttons {
   position: fixed;
@@ -416,10 +422,38 @@ body {
     .site-grid__item--white {
       justify-content: flex-start;
       background-color: #fff; }
-    .site-grid__item--active {
-      grid-row: 100fr; }
   .site-grid--white {
     background-color: #ffdd55; }
+  @media screen and (min-width: 740px) {
+    .site-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: calc(100vh - 60px);
+      grid-gap: 3px; }
+      .site-grid__item {
+        height: auto;
+        margin-bottom: 0; } }
+
+.about__popup {
+  background-color: #fff;
+  text-align: center;
+  z-index: 900; }
+
+.popup {
+  color: #222222; }
+  .popup__image {
+    width: 100vw;
+    height: calc((100vh - 47px) / 5);
+    object-fit: cover; }
+  .popup__title {
+    font: normal 700 31px Merriweather, serif; }
+  .popup__subtitle {
+    font: normal 300 15px/30px Open Sans, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 40px; }
+  .popup__text {
+    font: normal 300 16px/23px Open Sans, sans-serif;
+    margin-bottom: 1em; }
 
 .header {
   display: flex;
@@ -446,27 +480,28 @@ body {
     .header__subtitle-container {
       display: flex;
       align-items: center; }
-
-.about__popup {
-  background-color: #fff;
-  text-align: center;
-  z-index: 900; }
-
-.popup {
-  color: #222222; }
-  .popup__image {
-    width: 100vw;
-    height: calc((100vh - 47px) / 5);
-    object-fit: cover; }
-  .popup__title {
-    font: normal 700 31px Merriweather, serif; }
-  .popup__subtitle {
-    font: normal 300 15px/30px Open Sans, sans-serif;
-    text-transform: uppercase;
-    margin-bottom: 40px; }
-  .popup__text {
-    font: normal 300 16px/23px Open Sans, sans-serif;
-    margin-bottom: 1em; }
+  @media screen and (min-width: 740px) {
+    .header {
+      position: absolute;
+      top: 30vh;
+      left: calc(50vw - 178.78px);
+      align-items: baseline; }
+      .header__title {
+        font: normal 700 144px/144px Merriweather, serif; }
+        .header__title-underscore {
+          width: 79px;
+          height: 11px;
+          margin-left: 6px;
+          transform: translateY(17px); }
+      .header__subtitle {
+        font: normal 300 22px Open Sans, sans-serif;
+        letter-spacing: 2.5px; }
+        .header__subtitle-button {
+          margin: 0 15px 0 0; }
+        .header__subtitle-container {
+          position: absolute;
+          top: 60vh;
+          left: calc(50vw - 25px); } }
 
 .portfolio-item {
   display: flex;
@@ -515,7 +550,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 55px 0;
+  padding: 55px 0 30px 0;
   margin: 0; }
 
 .portfolio__readmore-button {
